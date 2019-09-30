@@ -19,5 +19,5 @@ camera = picamera.PiCamera(resolution=(1920, 1080),framerate=30)
 camera.video_stabilization = True
 
 for filename in camera.record_sequence(
-        destination+(datetime.now().strftime('%Y-%m-%d__%H-%M-%S'))+'_.h264' for i in range(1, 1111)):
+        destination+(datetime.now().strftime('%Y-%m-%d__%H-%M-%S'))+'_%d.h264' % i for i in range(1, 1111)):
     camera.wait_recording(300)
